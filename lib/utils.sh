@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export KERL_VERSION="${ASDF_KERL_VERSION:-4.4.0}"
 
 handle_failure() {
