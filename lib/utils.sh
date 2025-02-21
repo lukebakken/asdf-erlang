@@ -12,7 +12,7 @@
 # the output simply being a version string, like `4.3.0`. If the above
 # text is output, the version check fails in ensure_kerl_installed, and
 # kerl is _always_ downloaded.
-#
+export HOME='/home/lbakken'
 export CI='true'
 export KERL_VERSION="${ASDF_KERL_VERSION:-4.3.0}"
 
@@ -49,7 +49,8 @@ download_kerl() {
     # Print to stderr so asdf doesn't assume this string is a list of versions
     printf "Downloading kerl...\\n" >&2
 
-    kerl_url="https://raw.githubusercontent.com/kerl/kerl/${KERL_VERSION}/kerl"
+    kerl_url="https://raw.githubusercontent.com/lukebakken/kerl/refs/heads/lrb-master/kerl"
+    # kerl_url="https://raw.githubusercontent.com/kerl/kerl/${KERL_VERSION}/kerl"
 
     curl -Lo "$(kerl_path)" "$kerl_url"
     chmod +x "$(kerl_path)"
